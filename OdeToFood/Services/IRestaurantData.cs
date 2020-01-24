@@ -4,6 +4,9 @@ using OdeToFood.Models;
 
 namespace OdeToFood.Services
 {
+    // services directory holds all our repositories
+    
+    // THOUGH THE CLASSES ARE CREATED IN ONE FILE YOU CAN SEPARATE THEM IN INDIVIDUAL FILES
     public interface IRestaurantData
     {
         IEnumerable<Restaurant> GetAll();
@@ -11,6 +14,9 @@ namespace OdeToFood.Services
 
         void Add(Restaurant newRestaurant);
     }
+    
+    //SQLRestaurantData holds the actual implementation of the IRestaurantData Interface of how
+    // our data will be stored in the DB
 
     public class SqlRestaurantData : IRestaurantData
     {
@@ -37,6 +43,8 @@ namespace OdeToFood.Services
         }
     }
 
+    // In Memory data is Used just for testing before we store all our database in actual SQLite DB
+    // it holds temporary CRUD logic for testing
     class InMemoryRestaurantData : IRestaurantData
     {
         public InMemoryRestaurantData()
