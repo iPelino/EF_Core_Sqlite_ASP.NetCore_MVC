@@ -1,0 +1,31 @@
+@model OdeToFood.ViewModels.HomeViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+<div>
+    <h1>Welcome</h1>
+    <div>
+        <table>
+        @* @foreach (var resto in Model) *@
+        @foreach (var resto in Model.Restaurants)
+        {
+            <tr>
+                <td>@Html.ActionLink(resto.Id.ToString(), "Details", new {id = resto.Id})</td>
+                <td>@resto.Name</td>
+            </tr>
+        }
+        </table>
+
+    </div>
+</div>
+</body>
+</html>

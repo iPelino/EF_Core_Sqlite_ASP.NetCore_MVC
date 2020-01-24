@@ -1,0 +1,22 @@
+@model OdeToFood.Models.Restaurant
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1>@Model.Name</h1>
+    <h1>ID: @Model.Id</h1>
+    <h1>Cuisine: @Model.Cuisine</h1>
+
+<div>
+</div>
+@Html.ActionLink("View All Restaurants", "Index","Home")
+</body>
+</html>
